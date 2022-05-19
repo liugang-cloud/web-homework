@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/go.png" type="image/png">
+    <title>tripper</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+
+    <link href="assest/aos/aos.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: round;
+            src: url('assest/font/font.ttf');
+        }
+        
+        html {
+            font-size: 23px;
+            overflow-x: hidden;
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 62rem;
+            height: 2rem;
+            background-color: rgba(0, 0, 0, 0);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            z-index: 10;
+            transition: all 0.5s;
+        }
+        
+        .header_logo {
+            height: 2rem;
+            width: 8rem;
+            font-family: round;
+            color: rgb(110, 160, 229);
+            line-height: 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+        
+        .header_nav {
+            width: 25rem;
+            height: 2rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin-left: 4rem;
+        }
+        
+        .header_nav>div {
+            width: 5.5rem;
+            height: 2rem;
+            color: white;
+            line-height: 2.3rem;
+            text-align: center;
+            font-size: 0.75rem;
+            cursor: pointer;
+        }
+        
+        .header_login {
+            width: 7rem;
+            height: 2rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 16rem;
+            font-size: 0.8rem;
+        }
+        
+        .header_login>div:nth-child(1) {
+            color: white;
+            width: 4rem;
+            height: 2rem;
+            text-align: center;
+            line-height: 2rem;
+            cursor: pointer;
+        }
+        
+        .header_login>div:nth-child(2) {
+            color: white;
+            width: 3.3rem;
+            height: 1.4rem;
+            border: 3px solid rgb(128, 178, 249);
+            line-height: 1.4rem;
+            text-align: center;
+            border-radius: 2rem;
+            cursor: pointer;
+        }
+        
+        .banner {
+            width: 186rem;
+            height: 31rem;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            left: 0;
+            transition: all 0.5s;
+        }
+        
+        .banner>div:nth-child(1) {
+            width: 62rem;
+            height: 31rem;
+            background-image: url('img/back2.jpg');
+            background-size: 100% 100%;
+        }
+        
+        .banner>div:nth-child(2) {
+            width: 62rem;
+            height: 31rem;
+            background-image: url('img/back.png');
+            background-size: 100% 100%;
+        }
+        
+        .banner>div:nth-child(3) {
+            width: 62rem;
+            height: 31rem;
+            background-image: url('img/back3.jpg');
+            background-size: 100% 100%;
+        }
+        
+        .wrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 62rem;
+            overflow-x: hidden;
+            height: fit-content;
+            overflow-y: hidden;
+        }
+        
+        .mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 9;
+            background-color: rgba(0, 0, 0, 0.189);
+            width: 62rem;
+            height: 31rem;
+        }
+        
+        .left_btn {
+            position: relative;
+            top: 14rem;
+            left: 0.5rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            line-height: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            background-color: aliceblue;
+            font-size: 2rem;
+            opacity: 0.3;
+            color: rgb(145, 145, 145);
+            cursor: pointer;
+        }
+        
+        .right_btn {
+            position: relative;
+            top: 12rem;
+            left: 58.5rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            line-height: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            background-color: aliceblue;
+            opacity: 0.3;
+            color: rgb(145, 145, 145);
+            cursor: pointer;
+        }
+        
+        .slogan {
+            position: relative;
+            width: 40rem;
+            height: 20rem;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        
+        .slogan>span:nth-child(1) {
+            font-size: 2.5rem;
+            color: white;
+            margin-top: 7rem;
+        }
+        
+        .slogan>span:nth-child(2) {
+            font-size: 1.2rem;
+            color: white
+        }
+        
+        .slogan>div:nth-child(3) {
+            font-size: 0.9rem;
+            width: 4.5rem;
+            height: 1.8rem;
+            background-color: rgb(110, 160, 229);
+            border-radius: 6px;
+            text-align: center;
+            line-height: 1.8;
+            color: white;
+            margin-top: 2rem;
+        }
+        
+        .service {
+            width: 62rem;
+            height: 42rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(248, 252, 255);
+        }
+        
+        .service_title {
+            margin-top: 1rem;
+            color: rgb(110, 160, 229);
+            font-family: round;
+            font-size: 1.2rem;
+        }
+        
+        .tabbar {
+            width: 25rem;
+            height: 2rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            margin-top: 0.8rem;
+        }
+        
+        .tabbar>div {
+            width: 4rem;
+            height: 1.6rem;
+            border-radius: 2rem;
+            line-height: 1.6rem;
+            text-align: center;
+            border: 3px solid rgba(110, 160, 229, 0);
+            transition: all 0.5s;
+        }
+        
+        .tabbar>div:hover {
+            border: 3px solid rgb(110, 160, 229);
+            cursor: pointer;
+        }
+        
+        .service_container {
+            width: 58rem;
+            height: 40rem;
+            margin-top: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .service_container>.serve {
+            outline: 1px solid black;
+            width: 12rem;
+            margin: 1rem;
+            position: relative;
+        }
+        
+        .service_container>.short {
+            height: 12rem;
+        }
+        
+        .service_container>.long {
+            height: 18rem;
+        }
+        
+        .serve>img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .serve:hover>div {
+            opacity: 1;
+        }
+        
+        .serve>div {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.356);
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        
+        .serve>div>span:nth-child(1) {
+            font-size: 1.3rem;
+            margin-top: 1rem;
+        }
+        
+        .serve>div>span:nth-child(2) {
+            font-size: 0.8rem;
+            margin-top: 1rem;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            text-align: center;
+        }
+        
+        .serve>div>.btn {
+            width: 3.2rem;
+            height: 1.6rem;
+            outline: none;
+            background-color: rgb(110, 160, 229);
+            color: white;
+            font-size: 0.6rem;
+            margin-top: 2rem;
+            text-align: center;
+            line-height: 1.6rem;
+            border-radius: 0.2rem;
+            cursor: pointer;
+        }
+        
+        .view {
+            width: 62rem;
+            height: 60rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .view_title {
+            margin-top: 1rem;
+            color: rgb(110, 160, 229);
+            font-family: round;
+            font-size: 1.2rem;
+        }
+        
+        .view_container {
+            width: 57rem;
+            height: 58rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+        }
+        
+        .view_item {
+            width: 57rem;
+        }
+        
+        .item_title {
+            font-size: 0.9rem;
+        }
+        
+        .item_container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 7rem;
+            margin-top: 1rem;
+        }
+        
+        .plane {
+            height: 10rem;
+        }
+        
+        .plane>.item_container>div {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            width: 9rem;
+            height: 100%;
+            background-color: white;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .plane>.item_container>div:hover {
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2)
+        }
+        
+        .item_title+span {
+            font-size: 0.7rem;
+            text-decoration: underline;
+            color: rgb(110, 160, 229);
+        }
+        
+        .plane>.item_container>div>span:nth-child(1) {
+            font-size: 0.8rem;
+            margin-left: 0.4em;
+            margin-top: 0.6rem;
+        }
+        
+        .plane>.item_container>div>span:nth-child(2) {
+            font-size: 0.7rem;
+            margin-left: 0.4rem;
+            margin-top: 0.8rem;
+        }
+        
+        .plane>.item_container>div>div:nth-child(3) {
+            margin-top: 1rem;
+            margin-left: 0.2rem;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .plane>.item_container>div>div:nth-child(3)>div:nth-child(2) {
+            margin-left: 1.8rem;
+            width: 3rem;
+            height: 1.1rem;
+            line-height: 1.1rem;
+            text-align: center;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            border: 1px solid rgb(110, 160, 229);
+            color: rgb(110, 160, 229);
+            margin-top: 0.1rem;
+            cursor: pointer;
+        }
+        
+        .group {
+            height: 12rem;
+        }
+        
+        .group>.item_container {
+            height: 9rem;
+        }
+        
+        .group>.item_container>div {
+            width: 10rem;
+            height: 9rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .group>.item_container>div:hover {
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2)
+        }
+        
+        .group>.item_container>div>img {
+            width: 9rem;
+            height: 5rem;
+        }
+        
+        .group>.item_container>div>span:nth-child(2) {
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+        
+        .group>.item_container>div>div:nth-child(3) {
+            display: flex;
+            flex-direction: row;
+            margin-top: 0.5rem;
+        }
+        
+        .group>.item_container>div>div:nth-child(3)>div {
+            margin-left: 1.8rem;
+            width: 3rem;
+            height: 1.1rem;
+            line-height: 1.1rem;
+            text-align: center;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            border: 1px solid rgb(110, 160, 229);
+            color: rgb(110, 160, 229);
+            margin-top: 0.1rem;
+            cursor: pointer;
+        }
+        
+        .hotel {
+            height: 16rem;
+        }
+        
+        .hotel>.item_container {
+            height: 13rem;
+        }
+        
+        .hotel>.item_container>div {
+            width: 10rem;
+            height: 12rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .hotel>.item_container>div:hover {
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2)
+        }
+        
+        .hotel>.item_container>div>img {
+            width: 9rem;
+            height: 6rem;
+        }
+        
+        .hotel>.item_container>div>span:nth-child(2) {
+            font-size: 0.7rem;
+            margin-top: 0.4rem;
+        }
+        
+        .hotel>.item_container>div>span:nth-child(3) {
+            font-size: 0.7rem;
+            margin-top: 0.4rem;
+        }
+        
+        .hotel>.item_container>div>span:nth-child(4) {
+            font-size: 0.7rem;
+            margin-top: 0.4rem;
+        }
+        
+        .hotel>.item_container>div>div:nth-child(5) {
+            display: flex;
+            flex-direction: row;
+            margin-top: 0.5rem;
+        }
+        
+        .hotel>.item_container>div>div:nth-child(5)>div {
+            margin-left: 1.8rem;
+            width: 3rem;
+            height: 1.1rem;
+            line-height: 1.1rem;
+            text-align: center;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            border: 1px solid rgb(110, 160, 229);
+            color: rgb(110, 160, 229);
+            margin-top: 0.1rem;
+            cursor: pointer;
+        }
+        
+        .tikit {
+            height: 13rem;
+        }
+        
+        .tikit>.item_container {
+            height: 10rem;
+        }
+        
+        .tikit>.item_container>div {
+            width: 10rem;
+            height: 10rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .tikit>.item_container>div:hover {
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .tikit>.item_container>div>img {
+            width: 9rem;
+            height: 6rem;
+        }
+        
+        .tikit>.item_container>div>span:nth-child(2) {
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+        
+        .tikit>.item_container>div>div:nth-child(3) {
+            display: flex;
+            flex-direction: row;
+            margin-top: 0.5rem;
+        }
+        
+        .tikit>.item_container>div>div:nth-child(3)>div {
+            margin-left: 1.8rem;
+            width: 3rem;
+            height: 1.1rem;
+            line-height: 1.1rem;
+            text-align: center;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            border: 1px solid rgb(110, 160, 229);
+            color: rgb(110, 160, 229);
+            margin-top: 0.1rem;
+            cursor: pointer;
+        }
+        
+        .partner {
+            width: 58rem;
+            height: 20rem;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+        
+        .partner_title {
+            margin-top: 1rem;
+            color: rgb(110, 160, 229);
+            font-family: round;
+            font-size: 1.2rem;
+        }
+        
+        .form {
+            width: 62rem;
+            height: 20rem;
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(247, 251, 255, 0.76);
+        }
+        
+        .form_person {
+            width: 30rem;
+            height: 3rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 1rem;
+        }
+        
+        .form_person>div {
+            width: 13rem;
+        }
+        
+        .form_location {
+            width: 30rem;
+            height: 6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .form_location>div {
+            width: 28rem;
+        }
+        
+        .el-cascader {
+            width: 100%;
+        }
+        
+        .form_data {
+            width: 30rem;
+            height: 3rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .form_data>div {
+            width: 13rem;
+        }
+        
+        .el-date-editor.el-input,
+        .el-date-editor.el-input__inner {
+            width: 100%;
+        }
+        
+        .el-time-select {
+            width: 100%;
+        }
+        
+        .form_button {
+            width: 4.5rem;
+            height: 1.8rem;
+            border-radius: 0.3rem;
+            background-color: rgb(110, 160, 229);
+            color: white;
+            line-height: 1.8rem;
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            font-family: round;
+            letter-spacing: 0.1rem;
+            cursor: pointer;
+        }
+        
+        .footer {
+            width: 62rem;
+            height: 6rem;
+            background-color: rgb(254, 254, 254);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            font-family: round;
+        }
+        
+        .footer>span:nth-child(1) {
+            font-size: 0.9rem;
+            margin-top: 1.3rem;
+        }
+        
+        .footer>span:nth-child(2) {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .footer>div:nth-child(3) {
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+        
+        .footer>div:nth-child(3)>span:nth-child(2) {
+            color: rgb(110, 160, 229);
+        }
+    </style>
+</head>
+
+<body onscroll="warn()">
+    <div class="header">
+        <span class="header_logo">旅者</span>
+        <div class="header_nav">
+            <div>热门景点</div>
+            <div>服务预定</div>
+            <div>伙伴招募</div>
+            <div>客服中心</div>
+        </div>
+        <div class="header_login">
+            <div>注册</div>
+            <div onclick="window.location='src/html/login.html'">登录</div>
+        </div>
+    </div>
+    <div class="wrap" id="app" data-aos="fade-zoom-in">
+        <div class="banner" style="left: 0;">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="mask">
+            <div class="left_btn" onclick="turn_left()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                  </svg>
+            </div>
+            <div class="right_btn" onclick="turn_right()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+            </div>
+            <div class="slogan">
+                <span>Welcome To tripper</span>
+                <span>欢迎来到旅者</span>
+                <div>get start</div>
+            </div>
+        </div>
+        <div class="service" data-aos="fade-up">
+            <span class="service_title">景点浏览</span>
+            <div class="tabbar">
+                <div>热门游</div>
+                <div>周边游</div>
+                <div>境内游</div>
+                <div>出境游</div>
+            </div>
+            <div class="service_container">
+
+                <template v-for="item in service">
+                        <div  v-bind:class="'serve'+' '+ item.type">
+                            <img v-bind:src="item.src" alt="">
+                            <div>
+                                <span>{{item.name}}</span>
+                                <span>{{item.introduce}}</span>
+                                <div class="btn">了解详情</div>
+                            </div>
+                        </div>
+                </template>
+
+            </div>
+        </div>
+        <div class="view" data-aos="fade-up">
+            <span class="view_title">服务预定</span>
+            <div class="view_container">
+                <div class="view_item plane">
+                    <span class="item_title">机票</span>
+                    <span>read more</span>
+                    <div class="item_container">
+                        <div v-for="item in plane">
+                            <span>{{item.start}} ——> {{item.terminal}}</span>
+                            <span>{{item.date}}</span>
+                            <div>
+                                <span>￥{{item.price}}</span>
+                                <div>抢 购</div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="view_item group">
+                    <span class="item_title">跟团</span>
+                    <span style="cursor: pointer;" onclick="window.location='src/html/group.html'">read more</span>
+                    <div class="item_container">
+                        <div v-for="item in group">
+                            <img v-bind:src="item.src" alt="">
+                            <span>{{item.title}}</span>
+                            <div>
+                                <span>￥{{item.price}}</span>
+                                <div>抢 购</div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="view_item hotel">
+                    <span class="item_title">酒店</span>
+                    <span>read more</span>
+                    <div class="item_container">
+                        <div v-for="item in hotel">
+                            <img v-bind:src="item.src" alt="">
+                            <span>{{item.name}}</span>
+                            <span>{{item.locate}}</span>
+                            <span>{{item.level}}</span>
+                            <div>
+                                <span>￥{{item.price}}</span>
+                                <div onclick="window.location='src/html/hotel_detail.html'">抢 购</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="view_item tikit">
+                    <span class="item_title">门票</span>
+                    <span style="cursor: pointer;" onclick="window.location='src/html/tikit.html'">read more</span>
+                    <div class="item_container">
+                        <div v-for="item in group">
+                            <img v-bind:src="item.src" alt="">
+                            <span>{{item.title}}</span>
+                            <div>
+                                <span>￥{{item.price}}</span>
+                                <div>抢 购</div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="partner" data-aos="fade-up">
+            <span class="partner_title">招募伙伴</span>
+            <div class="form">
+                <div class="form_person">
+                    <div>
+                        <el-input v-model="input" placeholder="请输入姓名"></el-input>
+                    </div>
+                    <div>
+                        <el-input v-model="input" placeholder="请输入邮箱"></el-input>
+                    </div>
+                </div>
+                <div class="form_location">
+                    <div>
+                        <el-cascader v-model="value" :options="options" @change="handleChange" placeholder="请输入出发地"></el-cascader>
+                    </div>
+                    <div>
+                        <el-cascader v-model="value" :options="options" @change="handleChange" placeholder="请输入目的地"></el-cascader>
+                    </div>
+                </div>
+                <div class="form_data">
+                    <div>
+                        <el-date-picker v-model="value1" type="date" placeholder="选择日期">
+                        </el-date-picker>
+                    </div>
+                    <div>
+                        <el-time-select v-model="value" :picker-options="{start: '08:30', step: '00:15', end: '18:30'}" placeholder="选择时间">
+                    </div>
+                </div>
+                <div class="form_button">
+                    立刻提交
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <span>© Copyright FlexStart. All Rights Reserved</span>
+            <span>USE: Vue element-ui hook</span>
+            <div>
+                <span>designed </span>
+                <span> group-one</span>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+<script src="assest/vue/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="assest/aos/aos.js"></script>
+<script>
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 1420 * 23 + "px"
+    AOS.init({
+        offset: 200,
+        duration: 800,
+        easing: 'ease',
+        delay: 50,
+    });
+    let app = new Vue({
+        el: "#app",
+        data: {
+
+            service: [{
+                type: "short",
+                src: "img/huangshan.jpg",
+                name: "黄山",
+                introduce: "黄山，位于安徽省黄山市境内，分为温泉、云谷、玉屏等九个管理区，有千米以上高峰88座。"
+            }, {
+                type: "long",
+                src: "img/jiuzhaigou.jpg",
+                name: "九寨沟",
+                introduce: "四周雪峰高耸，湖水清澈艳丽，飞瀑多姿多彩，急流汹涌澎湃，林木青葱婆娑。蓝蓝的天空，明媚的阳光，清新的空气和点缀其间的古老村寨、栈桥、磨坊，组成了一幅内涵丰富、和谐统一的优美画卷，历来被当地藏族同胞视为“神山圣水”。"
+            }, {
+                type: "long",
+                src: "img/mogaoku.jpg",
+                name: "莫高窟",
+                introduce: "莫高窟，俗称千佛洞，位于中国甘肃省敦煌市东南25公里处莫高镇的鸣沙山东麓断崖上，前临宕泉河，面向东，南北长1680米，高50米。 是世界上现存规模最大、内容最丰富的佛教艺术地"
+            }, {
+                type: "short",
+                src: "img/gugon.jpg",
+                name: "故宫",
+                introduce: "北京故宫是世界上现存规模最大、保存最为完整的木质结构古建筑之一，是国家AAAAA级旅游景区"
+            }, {
+                type: "long",
+                src: "img/gulangyu.jpg",
+                name: "鼓浪屿",
+                introduce: "鼓浪屿，原名“圆沙洲”，别名“圆洲仔”，南宋时期命“五龙屿”，岛西南有一海蚀岩洞受浪潮冲击，声如擂鼓，自明朝雅化为今名称“鼓浪屿”，位于厦门市思明区鼓浪屿街道。"
+            }, {
+                type: "short",
+                src: "img/leshan.jpg",
+                name: "乐山大佛",
+                introduce: "乐山大佛，又名凌云大佛，位于四川省 乐山市 南岷江东岸凌云寺侧，濒 大渡河 、 青衣江 和 岷江 三江汇流处。"
+            }, {
+                type: "short",
+                src: "img/zhuozhengyuan.jpg",
+                name: "拙政园",
+                introduce: "拙政园，位于江苏省苏州市，始建于明正德初年（16世纪初），是江南古典园林的代表作品。"
+            }, {
+                type: "long",
+                src: "img/longmen.jpg",
+                name: "龙门石窟",
+                introduce: "龙门石窟位于河南省洛阳市，是世界上造像最多、规模最大的石刻艺术宝库，被联合国科教文组织评为“中国石刻艺术的最高峰”"
+            }, ],
+            plane: [{
+                start: "广东",
+                terminal: "上海",
+                date: "4月20日",
+                price: "1700"
+            }, {
+                start: "北京",
+                terminal: "武汉",
+                date: "3月28日",
+                price: "2500"
+            }, {
+                start: "长沙",
+                terminal: "合肥",
+                date: "1月17日",
+                price: "1450"
+            }, {
+                start: "南昌",
+                terminal: "兰州",
+                date: "6月26日",
+                price: "1500"
+            }, {
+                start: "香港",
+                terminal: "大理",
+                date: "3月18日",
+                price: "750"
+            }],
+            group: [{
+                src: "img/group1.png",
+                title: "拉萨梅里雪山",
+                price: "5500"
+            }, {
+                src: "img/group2.jpg",
+                title: "西江千户苗寨",
+                price: "6500"
+            }, {
+                src: "img/group3.jpg",
+                title: "桂林龙骨梯田",
+                price: "7500"
+            }, {
+                src: "img/group4.jpg",
+                title: "武夷山珞珈山双拼",
+                price: "8500"
+            }, {
+                src: "img/group5.jpg",
+                title: "张家界凤凰古城",
+                price: "1500"
+            }],
+            hotel: [{
+                src: "img/hotel1.jpg",
+                name: "茶弥别墅",
+                locate: "上海国际旅游度假区",
+                level: "AAAAA",
+                price: "350"
+            }, {
+                src: "img/hotel2.jpg",
+                name: "澜山公馆",
+                locate: "桂林两江西巷区",
+                level: "AAA",
+                price: "450"
+            }, {
+                src: "img/hotel3.jpg",
+                name: "木林之畔度假屋",
+                locate: "上海外滩",
+                level: "AAAAA",
+                price: "550"
+            }, {
+                src: "img/hotel4.jpg",
+                name: "秋果S酒店",
+                locate: "北京亚运村鸟巢店",
+                level: "AAA",
+                price: "650"
+            }, {
+                src: "img/hotel5.jpg",
+                name: "久栖蓝岸民宿",
+                locate: "大连",
+                level: "AAAA",
+                price: "750"
+            }, ]
+        }
+    })
+
+    function turn_right() {
+        let banner = document.getElementsByClassName("banner")[0]
+        banner.style.left = parseInt(banner.style.left) - 62 + 'rem'
+    }
+
+    function turn_left() {
+        let banner = document.getElementsByClassName("banner")[0]
+        banner.style.left = parseInt(banner.style.left) + 62 + 'rem'
+    }
+
+    function warn() {
+        let header = document.getElementsByClassName("header")[0]
+        if (window.pageYOffset > 200) {
+            header.style.background = "black"
+        } else {
+            header.style.background = "rgba(0, 0, 0, 0)"
+        }
+
+    }
+</script>
+
+</html>

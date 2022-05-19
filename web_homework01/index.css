@@ -1,0 +1,152 @@
+html {
+    font-size: 23px;
+}
+
+ :root {
+    --headerHeight: 2rem;
+    --navHeight: 1.5rem;
+}
+
+.header1 {
+    width: 62rem;
+    height: var(--navHeight);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(229, 229, 229);
+}
+
+.header1_slogan {
+    width: 13rem;
+    height: var(--navHeight);
+    margin-left: 1rem;
+    font-family: round;
+    line-height: var(--navHeight);
+    color: rgb(110, 160, 229);
+    letter-spacing: 5px;
+}
+
+.header1_navbar {
+    width: 24rem;
+    height: var(--navHeight);
+    margin-left: 21rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar_btn:nth-child(1) {
+    width: 2rem;
+}
+
+.navbar_btn:last-child {
+    width: 6rem;
+}
+
+.navbar_btn {
+    width: 4rem;
+    height: var(--navHeight);
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: var(--navHeight);
+    color: rgb(107, 107, 107);
+    font-family: none;
+}
+
+.navbar_btn>svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.navbar_btn:hover {
+    background-color: rgb(144, 172, 249);
+    color: white;
+}
+
+.header2 {
+    width: 62rem;
+    height: var(--headerHeight);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header2_logo {
+    width: 8rem;
+    height: var(--navHeight);
+    margin-left: 2rem;
+}
+
+.header2_navbar {
+    width: 28rem;
+    height: var(--headerHeight);
+    margin-left: 21rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header2_navbar>.navbar_btn {
+    width: 6rem;
+    height: var(--headerHeight);
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: var(--headerHeight);
+    color: black;
+}
+
+.header2_navbar>.navbar_btn:hover {
+    color: white;
+}
+
+.banner {
+    width: 62rem;
+    height: 27rem;
+    position: relative;
+}
+
+.banner_img {
+    width: 62rem;
+    height: 27rem;
+    outline: 1px solid black;
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    background-size: 62rem 27rem;
+}
+
+#mask {
+    position: inherit;
+    top: 0rem;
+    left: 0;
+    width: 62rem;
+    height: 27rem;
+    background-color: rgba(0, 0, 0, 0.089);
+    z-index: 5;
+}
+
+#mask>span {
+    width: 62rem;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    position: absolute;
+    top: 12.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#svg {
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    top: 18rem;
+    left: 28.5rem;
+    color: rgb(244, 244, 244);
+}
+
+#svg:hover {
+    color: rgb(144, 172, 249);
+}

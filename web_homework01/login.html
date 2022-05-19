@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            font-size: 23px;
+        }
+        
+        .login_container {
+            width: 16rem;
+            height: 20rem;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            top: 9rem;
+            background-color: rgba(0, 0, 0, 0.252);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            color: white;
+        }
+        
+        .container_title {
+            margin-top: 1rem;
+            font-size: 2rem;
+        }
+        
+        .container_input {
+            margin-top: 3rem;
+        }
+        
+        .container_button {
+            margin-top: 3rem;
+        }
+        
+        .container_input {
+            width: fit-content;
+            height: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .input {
+            width: 16rem;
+            height: fit-content;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container_button {
+            width: 4rem;
+            height: 2rem;
+            text-align: center;
+            border-radius: 3px;
+            line-height: 2rem;
+            background-color: rgb(193, 224, 255);
+            color: white;
+        }
+        
+        input {
+            width: 6rem;
+        }
+        
+        .login_wrap {
+            width: 62rem;
+            height: 35rem;
+            background-image: url('img/login.png');
+            background-size: 62rem 35rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login_wrap">
+        <div class="login_container">
+            <div class="container_title">登录</div>
+            <div class="container_input">
+                <div class="input">
+                    <span>用户名:</span> &nbsp;&nbsp;&nbsp;
+                    <input type="text">
+                </div>
+                <div class="input">
+                    <span>密&nbsp;&nbsp;&nbsp;码:</span> &nbsp;&nbsp;&nbsp;
+                    <input type="text">
+                </div>
+            </div>
+            <div class="container_button">登录</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

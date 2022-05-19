@@ -1,0 +1,110 @@
+.main {
+    margin-top: 20px;
+    height: 700px;
+}
+
+.card_container {
+    position: relative;
+    width: 1400px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card_container .card {
+    width: 400px;
+    height: 300px;
+    border-radius: 5px;
+    background: #f1f1f1;
+    box-shadow: 2px 2px 2px #bababa8c, -2px -2px 2px #ffffff86;
+    position: absolute;
+    top: 280px;
+    left: 500px;
+    transform-style: preserve-3d;
+    perspective: 800px;
+    transition: all 0.3s;
+}
+
+.card {
+    background-repeat: no-repeat;
+    background-size: 400px 300px;
+}
+
+.card_left_01 {
+    transform: translateX(-410px) translateY(80px) rotateZ(-6deg);
+    z-index: 1;
+}
+
+.card_left_02 {
+    transform: translateX(-360px) translateY(70px) rotateZ(-5deg);
+    z-index: 2;
+}
+
+.card_left_03 {
+    transform: translateX(-310px) translateY(60px) rotateZ(-4deg);
+    z-index: 3;
+}
+
+.card_left_04 {
+    transform: translateX(-260px) translateY(50px) rotateZ(-3deg);
+    z-index: 4;
+}
+
+.card_right_01 {
+    transform: translateX(260px) translateY(50px) rotateZ(3deg);
+    z-index: 4;
+}
+
+.card_right_02 {
+    transform: translateX(310px) translateY(60px) rotateZ(4deg);
+    z-index: 3;
+}
+
+.card_right_03 {
+    transform: translateX(360px) translateY(70px) rotateZ(5deg);
+    z-index: 2;
+}
+
+.card_right_04 {
+    transform: translateX(410px) translateY(80px) rotateZ(6deg);
+    z-index: 1;
+}
+
+.card_main {
+    transform: translateX(0px) translateY(-80px) scale(2);
+    z-index: 11;
+}
+
+.left_button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fdfdfd;
+    box-shadow: 3px 3px 3px #adadad, -3px -3px 3px #ffffff;
+    position: absolute;
+    left: 0;
+    top: 265px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.right_button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fdfdfd;
+    box-shadow: 3px 3px 3px #adadad, -3px -3px 3px #ffffff;
+    position: absolute;
+    top: 265px;
+    left: 1320px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.1s;
+}

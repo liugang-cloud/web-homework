@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="square.css">
+    <title>Document</title>
+    <style>
+        .refer {
+            height: 650px;
+            margin-top: 20px;
+        }
+        
+        .refer_title {
+            color: rgb(44, 153, 216);
+            font-size: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            width: fit-content;
+            height: fit-content;
+            position: relative;
+            top: 20px;
+        }
+        
+        .refer_container {
+            width: 1380px;
+            height: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .refer_container>div {
+            width: 300px;
+            height: 500px;
+            background: #fefefe;
+            box-shadow: 3px 3px 3px #bcbcbc, -2px -2px 2px #ffffff;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        
+        .describe {
+            width: 230px;
+            height: 200px;
+            background-color: #e7e7e7;
+            margin-top: 40px;
+        }
+        
+        .cato {
+            height: 800px;
+            margin-top: 20px;
+        }
+        
+        .footer {
+            height: 200px;
+            margin-top: 20px;
+        }
+        
+        .option.dark {
+            box-shadow: none;
+        }
+        
+        .noshadow {
+            box-shadow: none;
+        }
+        
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -10;
+        }
+        
+        #wrap {
+            transform: scale(98%) translateY(-20px);
+        }
+    </style>
+</head>
+
+<body>
+    <img id="background" src="img/back.png" alt="" srcset="">
+    <div id="wrap">
+
+
+        <div class="header shadow">
+            <div class="header_logo">
+                <p>传智书店</p>
+            </div>
+            <div class="header_nav">
+                <div style="background-image: url(img/option01.png);" class="option" onclick="push(0)"><a>关于我们</a></div>
+                <div style="background-image: url(img/option02.png);" class="option" onclick="push(1)"><a>热门推荐</a></div>
+                <div style="background-image: url(img/option03.png);" class="option" onclick="push(2)"><a>商品分类</a></div>
+                <div style="background-image: url(img/option04.png);" class="option" onclick="push(3)"><a>热销榜单</a></div>
+                <div style="background-image: url(img/option05.png);" class="option" onclick="push(4)"><a>合作伙伴</a></div>
+            </div>
+            <div class="header_login">
+                <div class="login_button" onclick="login()">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="width: 45px; height: 45px; color:#525252" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
+                  </svg>
+                </div>
+                <p style="transition: all 1s;">个人中心</p>
+            </div>
+        </div>
+        <div class="main shadow">
+            <div class="card_container">
+                <div>
+                    <div style="background-image: url(img/01.png);" class="card card_left_03 " onclick="showcard()"></div>
+                    <div style="background-image: url(img/01.png);" class="card card_left_04 " onclick="showcard()"></div>
+                    <div style="background-image: url(img/01.png);" class="card card_main " onclick="showcard()"></div>
+                    <div style="background-image: url(img/01.png);" class="card card_right_01 " onclick="showcard()"></div>
+                    <div style="background-image: url(img/01.png);" class="card card_right_02 " onclick="showcard()"></div>
+                </div>
+
+                <div class="left_button" onclick="turnleft()">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="color: #8b8b8b; width:50px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </div>
+                <div class="right_button" onclick="turnright()">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="color: #8b8b8b;width:50px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+
+            </div>
+        </div>
+        <div class="refer shadow">
+            <div class="refer_title">热门推荐</div>
+            <div class="refer_container">
+                <div>
+                    <div class="container" onmouseout="init()">
+                        <div class="face front">
+                            <p onclick="rotate(1)">up</p>
+                            <p onclick="rotate(2)">down</p>
+                            <p onclick="rotate(3)">left</p>
+                            <p onclick="rotate(4)">right</p>
+                        </div>
+                        <div class="face top"></div>
+                        <div class="face back"></div>
+                        <div class="face left"></div>
+                        <div class="face right"></div>
+                        <div class="face bottom"></div>
+                    </div>
+                    <div class="describe"></div>
+                </div>
+                <div>
+                    <div class="container" onmouseout="init()">
+                        <div class="face front">
+                            <p onclick="rotate(1)">up</p>
+                            <p onclick="rotate(2)">down</p>
+                            <p onclick="rotate(3)">left</p>
+                            <p onclick="rotate(4)">right</p>
+                        </div>
+                        <div class="face top"></div>
+                        <div class="face back"></div>
+                        <div class="face left"></div>
+                        <div class="face right"></div>
+                        <div class="face bottom"></div>
+                    </div>
+                    <div class="describe"></div>
+                </div>
+                <div>
+                    <div class="container" onmouseout="init()">
+                        <div class="face front">
+                            <p onclick="rotate(1)">up</p>
+                            <p onclick="rotate(2)">down</p>
+                            <p onclick="rotate(3)">left</p>
+                            <p onclick="rotate(4)">right</p>
+                        </div>
+                        <div class="face top"></div>
+                        <div class="face back"></div>
+                        <div class="face left"></div>
+                        <div class="face right"></div>
+                        <div class="face bottom"></div>
+                    </div>
+                    <div class="describe"></div>
+                </div>
+                <div>
+                    <div class="container" onmouseout="init()">
+                        <div class="face front">
+                            <p onclick="rotate(1)">up</p>
+                            <p onclick="rotate(2)">down</p>
+                            <p onclick="rotate(3)">left</p>
+                            <p onclick="rotate(4)">right</p>
+                        </div>
+                        <div class="face top"></div>
+                        <div class="face back"></div>
+                        <div class="face left"></div>
+                        <div class="face right"></div>
+                        <div class="face bottom"></div>
+                    </div>
+                    <div class="describe"></div>
+                </div>
+            </div>
+        </div>
+        <div class="cato shadow"></div>
+        <div class="footer shadow"></div>
+    </div>
+</body>
+<script src="square.js"></script>
+<script>
+    function push(num) {
+        let pre = document.getElementsByClassName("dark")[0]
+        if (pre) {
+            pre.classList.remove("dark")
+        }
+        document.getElementsByClassName("option")[num].classList.add("dark")
+            // event.currentTarget.classList.add("noshadow")
+    }
+
+    function login() {
+        let button = document.getElementsByClassName("login_button")[0]
+        button.classList.add("noshadow")
+        button.children[0].style.color = "rgb(44, 153, 216)"
+        button.parentElement.children[1].style.color = "rgb(44, 153, 216)"
+    }
+
+    function showcard() {
+        //let pre = document.getElementsByClassName("card_main")[0]
+        //if (pre) {
+        //    pre.classList.remove("card_main")
+        // }
+        let card_list = document.getElementsByClassName("card")
+        for (let i = 0; i < card_list.length; i++) {
+            card_list[i].className = "card"
+        }
+        event.target.classList.add("card_main");
+        let prenode = event.target.previousElementSibling;
+        let nextnode = event.target.nextElementSibling;
+        let i = 4;
+        let j = 1;
+        while (prenode) {
+            prenode.classList.add(`card_left_0${i}`)
+            i--
+            prenode = prenode.previousElementSibling
+        }
+        while (nextnode) {
+            nextnode.classList.add(`card_right_0${j}`)
+            j++
+            nextnode = nextnode.nextElementSibling
+        }
+    }
+
+    function turnleft() {
+        const pre = document.getElementsByClassName("card_main")[0]
+        const current = pre.previousElementSibling
+        if (current) {
+            let card_list = document.getElementsByClassName("card")
+            for (let i = 0; i < card_list.length; i++) {
+                card_list[i].className = "card"
+            }
+            current.classList.add("card_main")
+
+            let prenode = current.previousElementSibling;
+            let nextnode = current.nextElementSibling;
+            let i = 4;
+            let j = 1;
+            while (prenode) {
+                prenode.classList.add(`card_left_0${i}`)
+                i--
+                prenode = prenode.previousElementSibling
+            }
+            while (nextnode) {
+                nextnode.classList.add(`card_right_0${j}`)
+                j++
+                nextnode = nextnode.nextElementSibling
+            }
+        }
+        const target = document.getElementsByClassName("left_button")[0]
+        target.classList.add("noshadow")
+        setTimeout(() => {
+            target.classList.remove("noshadow")
+        }, 200);
+    }
+
+    function turnright() {
+        const pre = document.getElementsByClassName("card_main")[0]
+        const current = pre.nextElementSibling
+        if (current) {
+            let card_list = document.getElementsByClassName("card")
+            for (let i = 0; i < card_list.length; i++) {
+                card_list[i].className = "card"
+            }
+            current.classList.add("card_main")
+            let prenode = current.previousElementSibling;
+            let nextnode = current.nextElementSibling;
+            let i = 4;
+            let j = 1;
+            while (prenode) {
+                prenode.classList.add(`card_left_0${i}`)
+                i--
+                prenode = prenode.previousElementSibling
+            }
+            while (nextnode) {
+                nextnode.classList.add(`card_right_0${j}`)
+                j++
+                nextnode = nextnode.nextElementSibling
+            }
+        }
+        const target = document.getElementsByClassName("right_button")[0]
+        target.classList.add("noshadow")
+        setTimeout(() => {
+            target.classList.remove("noshadow")
+        }, 200);
+
+
+    }
+</script>
+
+</html>

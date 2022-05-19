@@ -1,0 +1,82 @@
+html {
+    font-size: 23px;
+}
+
+.senery {
+    width: 62rem;
+    height: 35rem;
+    background-image: url('img/background.png');
+    background-size: 62rem 35rem;
+    margin-top: 1rem;
+    position: relative;
+}
+
+.scenery_mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 62rem;
+    height: 35rem;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.senery_navbar {
+    width: 33rem;
+    height: 2.5rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.senery_navbar_btn {
+    width: 6rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 2.5rem;
+    color: white;
+}
+
+.senery_navbar_btn:hover {
+    background-color: rgb(144, 172, 249);
+}
+
+.senery_container {
+    width: 48rem;
+    height: 27rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 2rem;
+    position: relative;
+    top: 2rem;
+}
+
+.container_left {
+    width: 12rem;
+    height: 27rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container_center {
+    width: 16rem;
+    height: 27rem;
+}
+
+.container_right {
+    width: 12rem;
+    height: 27rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.left_square {
+    width: 12rem;
+    height: 12rem;
+}

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/square.css">
+    <script src="../js/square.js"></script>
+    <title>Document</title>
+    <style>
+        html {
+            font-size: 23px;
+            /* background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%); */
+            background-image: url('../../img/back2.jpg');
+            background-size: 100vw 100vh;
+        }
+        
+        @font-face {
+            font-family: round;
+            src: url('../../assest/font/font.ttf');
+        }
+        
+        .wrap {
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            width: 32rem;
+            height: 21rem;
+            margin-top: 4rem;
+        }
+        
+        .back {
+            position: absolute;
+            top: 2rem;
+            width: 32rem;
+            height: 17rem;
+            background-color: white;
+            display: flex;
+            flex-direction: row;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        
+        .back>div {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            font-family: round;
+        }
+        
+        .back>div>img {
+            width: 8rem;
+            height: 8rem;
+            margin-top: 0.7rem;
+        }
+        
+        .back>div>div:nth-child(1) {
+            font-size: 1.4rem;
+            display: flex;
+            flex-direction: row;
+            margin-top: 0.7rem;
+            letter-spacing: 0.2rem;
+        }
+        
+        .back>div>div:nth-child(1)>span:nth-child(2) {
+            color: rgb(128, 178, 249);
+        }
+        
+        .back>div>span:nth-child(2) {
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+        }
+        
+        .back>div>span:nth-child(4) {
+            font-size: 0.8rem;
+            margin-top: 1.3rem;
+        }
+        
+        .back>div>div:nth-child(5) {
+            width: 3.6rem;
+            height: 1.3rem;
+            font-size: 0.8rem;
+            border: 2px solid rgb(128, 178, 249);
+            text-align: center;
+            line-height: 1.3rem;
+            margin-top: 0.3rem;
+            margin-right: 0.5rem;
+            border-radius: 8px;
+        }
+        
+        .login_form {
+            width: 15rem;
+            height: 21rem;
+            background-color: rgb(253, 254, 255);
+            position: absolute;
+            top: 0;
+            left: 1rem;
+            transition: all 0.3s;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        
+        .form_wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            font-family: round;
+        }
+        
+        .form_wrap2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            font-family: round;
+        }
+        
+        .form_title {
+            font-size: 1.2rem;
+        }
+        
+        .form_title2 {
+            font-size: 1.2rem;
+        }
+        
+        .form_content {
+            width: 15rem;
+            height: 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 1rem;
+        }
+        
+        .form_content2 {
+            width: 15rem;
+            height: 8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 1rem;
+        }
+        
+        .form_content>div {
+            width: 13rem;
+            height: 1.5rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        
+        .form_content>div>span {
+            margin-left: 0.7rem;
+        }
+        
+        .form_content input {
+            width: 8rem;
+            height: 1.1rem;
+            outline: none;
+            font-size: 1rem;
+            border-radius: 6px;
+        }
+        
+        .form_content2>div {
+            width: 14rem;
+            height: 1.5rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .form_content2>div>span {}
+        
+        .form_content2 input {
+            width: 8rem;
+            height: 1.1rem;
+            outline: none;
+            font-size: 1rem;
+            border-radius: 6px;
+        }
+        
+        .form_button {
+            margin-top: 1rem;
+            width: 3rem;
+            height: 1.5rem;
+            border-radius: 8px;
+            border: 3px solid rgb(103, 162, 244);
+            color: black;
+            letter-spacing: 3px;
+            text-align: center;
+            line-height: 1.5rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .form_button:hover {
+            background-color: rgb(103, 162, 244);
+            color: white;
+        }
+        
+        .switch {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="back">
+            <div class="register_back">
+                <div>
+                    <span>欢迎来到</span>
+                    <span>旅者之家</span>
+                </div>
+                <span>快快开启你的专属旅行吧</span>
+                <div class="container" onmouseout="init()">
+                    <div class="face front">
+                        <img class="face_img" src="../../img/f.jpg" alt="">
+                        <div class="c1" onclick="rotate(1)"></div>
+                        <div class="c2" onclick="rotate(2)"></div>
+                        <div class="c3" onclick="rotate(3)"></div>
+                        <div class="c4" onclick="rotate(4)"></div>
+                    </div>
+                    <div class="face top">
+                        <img class="face_img hidden" src="../../img/t.jpg" alt="">
+                    </div>
+                    <div class="face backk"></div>
+                    <div class="face left">
+                        <img class="face_img hidden" src="../../img/l.jpg" alt="">
+                    </div>
+                    <div class="face right">
+                        <img class="face_img hidden" src="../../img/r.jpg" alt="">
+                    </div>
+                    <div class="face bottom">
+                        <img class="face_img hidden" src="../../img/b.jpg" alt="">
+                    </div>
+                </div>
+                <span>已有账号？</span>
+                <div onclick="move(1)">立即登录</div>
+            </div>
+            <div class="login_back">
+                <div>
+                    <span>欢迎来到</span>
+                    <span>旅者之家</span>
+                </div>
+                <span>快快开启你的专属旅行吧</span>
+                <img src="../../img/r.jpg" alt="">
+                <span>还没账号？</span>
+                <div onclick="move(16)">立即注册</div>
+            </div>
+        </div>
+        <div class="login_form">
+            <div class="form_wrap">
+                <span class="form_title">用户登录</span>
+                <div class="form_content">
+                    <div>
+                        <span>账号：</span>
+                        <input type="text" name="" id="" class="username">
+                    </div>
+                    <div>
+                        <span>密码：</span>
+                        <input type="password" name="" id="" class="password">
+                    </div>
+                </div>
+                <div class="form_button" onclick="login()">登录</div>
+            </div>
+            <div class="form_wrap2 switch">
+                <span class="form_title2">用户注册</span>
+                <div class="form_content2">
+                    <div>
+                        <span>用户名：</span>
+                        <input type="text" name="" id="" class="r_username">
+                    </div>
+                    <div>
+                        <span>邮箱：</span>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div>
+                        <span>密码：</span>
+                        <input type="password" name="" id="" class="r_password">
+                    </div>
+                    <div>
+                        <span>确认密码：</span>
+                        <input type="password" name="" id="" class="r_password2">
+                    </div>
+
+                </div>
+                <div class="form_button" onclick="register()">注册</div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</body>
+<script src="assest/vue/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    let form = document.getElementsByClassName("login_form")[0]
+
+    function register() {
+        let username = document.getElementsByClassName("r_username")[0]
+        let password = document.getElementsByClassName("r_password")[0];
+        let password2 = document.getElementsByClassName("r_password2")[0];
+        let patt = /[a-zA-Z]/g
+        if (username.value.search(patt) == 0 && username.value.length >= 7) {
+
+        } else {
+            alert("用户名不少于7位，且以字母开头！")
+        }
+        if (password.value == password2.value) {
+            if (parseInt(password.value) != password.value) {
+
+            } else {
+                alert("密码不可以全是数字！")
+
+            }
+        } else {
+            alert("两次密码输入不一致！")
+
+        }
+    }
+
+    function login() {
+        let username = document.getElementsByClassName("username")[0].value;
+        let password = document.getElementsByClassName("password")[0].value;
+
+        if (username.indexOf("user") == 0 && password == "password") {} else {
+            alert("用户名须为“user”开头，密码须为“password”！")
+
+        }
+
+
+    }
+
+    function move(num) {
+        form.style.left = num + "rem";
+        switch (num) {
+            case 1:
+                form.children[1].classList.add("switch");
+                form.children[0].classList.remove("switch")
+                break;
+            case 16:
+                form.children[0].classList.add("switch");
+                form.children[1].classList.remove("switch")
+                break;
+
+            default:
+                break;
+        }
+    }
+</script>
+
+</html>

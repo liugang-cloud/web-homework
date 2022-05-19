@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            justify-content: center;
+        }
+        
+        .container {
+            transform-style: preserve-3d;
+            position: relative;
+            width: 250px;
+            height: 250px;
+            transition: all 0.5s;
+            transition-timing-function: ease-out;
+            perspective-origin: 400px -100px;
+            perspective: 2000px;
+        }
+        
+        .container:hover {
+            perspective-origin: center center;
+        }
+        
+        .container:hover>.face {
+            opacity: 1;
+        }
+        
+        .face {
+            width: 100%;
+            height: 100%;
+            background-color: aliceblue;
+            outline: 2px solid black;
+            position: absolute;
+            opacity: 0.7;
+            transition: all 0.5s;
+        }
+        
+        .front {
+            transform: translateZ(125px);
+        }
+        
+        .back {
+            transform: rotateY(180deg) translateZ(125px);
+        }
+        
+        .top {
+            transform: rotateX(90deg) translateZ(125px);
+        }
+        
+        .bottom {
+            transform: rotateX(-90deg) translateZ(125px);
+        }
+        
+        .left {
+            transform: rotateY(-90deg) translateZ(125px);
+        }
+        
+        .right {
+            transform: rotateY(90deg) translateZ(125px);
+        }
+        
+        .up {
+            transform: rotateX(90deg);
+            perspective: 20000px;
+            perspective-origin: center center;
+        }
+        
+        .down {
+            transform: rotateX(-90deg);
+            perspective: 20000px;
+            perspective-origin: center center;
+        }
+        
+        .lef {
+            transform: rotateY(90deg);
+            perspective: 20000px;
+            perspective-origin: center center;
+        }
+        
+        .righ {
+            transform: rotateY(-90deg);
+            perspective: 20000px;
+            perspective-origin: center center;
+        }
+        
+        @keyframes spin {
+            /* Y轴旋转 */
+            0% {
+                transform: rotateX(0);
+            }
+            100% {
+                transform: rotateX(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="container" onmouseout="init()">
+            <div class="face front">
+                <p onclick="rotate(1)">up</p>
+                <p onclick="rotate(2)">down</p>
+                <p onclick="rotate(3)">left</p>
+                <p onclick="rotate(4)">right</p>
+            </div>
+            <div class="face top"></div>
+            <div class="face back"></div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face bottom"></div>
+        </div>
+
+    </div>
+
+</body>
+<script>
+    function rotate(num) {
+        let container = document.getElementsByClassName("container")[0];
+        switch (num) {
+            case 1:
+                container.classList.add("up")
+                break;
+            case 2:
+                container.classList.add("down")
+                break;
+            case 3:
+                container.classList.add("lef")
+                break;
+            case 4:
+                container.classList.add("righ")
+                break;
+            default:
+                break;
+        }
+    }
+
+    function init() {
+        let container = document.getElementsByClassName("container")[0];
+        container.classList.value = "container"
+    }
+</script>
+
+</html>

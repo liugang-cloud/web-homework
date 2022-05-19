@@ -1,0 +1,70 @@
+html {
+    font-size: 23px;
+}
+
+.service {
+    width: 62rem;
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url('img/sevice_bg.jpg');
+    background-size: 62rem 35rem;
+    margin-top: 1rem;
+}
+
+.service_container {
+    width: 47rem;
+    height: 6rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.service_container_title {
+    width: 7rem;
+    height: 6rem;
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 2rem;
+    background-color: rgb(93, 165, 232);
+    line-height: 6rem;
+    color: white;
+    font-family: none;
+}
+
+.service_container_content {
+    width: 40rem;
+    height: 7rem;
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 7rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.service_container_content>img {
+    width: auto;
+    height: 6rem;
+}
+
+.wrap {
+    margin-top: 1rem;
+}
+
+.service_title {
+    color: white;
+    position: relative;
+    top: 2rem;
+    font-size: 1.5rem;
+    font-family: none;
+    letter-spacing: 0.5rem;
+    font-weight: bold;
+}

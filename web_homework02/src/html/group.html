@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/go.png" type="image/png">
+    <title>group</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style>
+        html {
+            font-size: 23px;
+        }
+        
+        @font-face {
+            font-family: round;
+            src: url('../../assest/font/font.ttf');
+        }
+        
+        #app {
+            margin-left: auto;
+            margin-right: auto;
+            width: 58rem;
+        }
+        
+        .header {
+            width: 58rem;
+            height: 3rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+        }
+        
+        .header>span {
+            font-size: 1.5rem;
+            font-family: round;
+            color: rgb(103, 162, 244);
+        }
+        
+        .header_search {
+            width: 15rem;
+            height: 3rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        
+        .el-input__inner {
+            border-radius: 2px;
+        }
+        
+        .header>div:nth-child(3) {
+            width: 9rem;
+            height: 3rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+        }
+        
+        .main {
+            width: 58rem;
+            height: 37rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .rank {
+            width: 12rem;
+            height: 100%;
+            background-image: url('../../img/star2.png');
+            background-size: 100% 100%;
+        }
+        
+        .page {
+            width: 46rem;
+            height: 100%;
+            position: relative;
+            outline: 1px solid rgb(207, 207, 207);
+        }
+        
+        .group {
+            width: 46rem;
+            height: 32rem;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        
+        .group>div {
+            width: 10rem;
+            height: 9rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            margin-left: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .group>div:hover {
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2)
+        }
+        
+        .group>div>img {
+            width: 9rem;
+            height: 5rem;
+        }
+        
+        .group>div>span:nth-child(2) {
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+        
+        .group>div>div:nth-child(3) {
+            display: flex;
+            flex-direction: row;
+            margin-top: 0.5rem;
+        }
+        
+        .group>div>div:nth-child(3)>div {
+            margin-left: 1.8rem;
+            width: 3rem;
+            height: 1.1rem;
+            line-height: 1.1rem;
+            text-align: center;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            border: 1px solid rgb(110, 160, 229);
+            color: rgb(110, 160, 229);
+            margin-top: 0.1rem;
+            cursor: pointer;
+        }
+        
+        .el-pagination {
+            position: absolute;
+            bottom: 0;
+        }
+        
+        .el-tabs__nav-scroll {
+            margin-left: 1rem;
+        }
+        
+        .rank {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .rank>span {
+            font-family: round;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            margin-left: 1rem;
+        }
+        
+        .rank>div {
+            width: 9rem;
+            height: 1.6rem;
+            background-color: rgb(247, 248, 255);
+            border-radius: 0.1rem;
+            margin-left: 1rem;
+            font-size: 0.8rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 0.5rem;
+            font-family: round;
+            justify-content: space-between;
+        }
+        
+        .rank>div>span:nth-child(1) {
+            margin-left: 0.5rem;
+        }
+        
+        .rank>div>div {
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="header">
+            <span>跟团游</span>
+            <div class="header_search">
+                <el-input placeholder="请输入内容" prefix-icon="el-icon-search" v-model="input2"></el-input>
+                <el-button style="border-radius: 2px;background-color:rgb(103, 162, 244) ;" type="primary" icon="el-icon-search">搜索</el-button>
+            </div>
+            <div>
+                <i style="color: cornflowerblue; font-size: 1.2rem;" class="el-icon-location"></i>
+                <span style="font-size: 0.8rem;">当前位置：北京</span>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="rank">
+                <span>排行榜</span>
+                <div v-for="item in star">
+                    <span>{{item.name}}</span>
+                    <div>
+                        <i class="el-icon-star-on"></i>
+                        <span>{{item.num}}</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="page">
+
+                <el-tabs v-model="activeName">
+                    <el-tab-pane label="云南" name="one">
+                        <div class=" group">
+
+                            <div v-for="item in group">
+                                <img v-bind:src="item.src" alt="">
+                                <span>{{item.title}}</span>
+                                <div>
+                                    <span>￥{{item.price}}</span>
+                                    <div>抢 购</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </el-tab-pane>
+                    <el-tab-pane label="江苏" name="two"></el-tab-pane>
+                    <el-tab-pane label="安徽" name="three"></el-tab-pane>
+                    <el-tab-pane label="河北" name="four"></el-tab-pane>
+                    <el-tab-pane label="河南" name="five"></el-tab-pane>
+                    <el-tab-pane label="江西" name="six"></el-tab-pane>
+                    <el-tab-pane label="广东" name="seven"></el-tab-pane>
+                </el-tabs>
+                <el-pagination background layout="prev, pager, next" :total="1000">
+                </el-pagination>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="../../assest/vue/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 1420 * 23 + "px"
+    var app = new Vue({
+        el: "#app",
+        data: {
+            input2: "",
+            activeName: "one",
+            star: [{
+                name: "拉萨",
+                num: "22245"
+            }, {
+                name: "青海湖",
+                num: "21456"
+            }, {
+                name: "武夷山",
+                num: "19887"
+            }, {
+                name: "井冈山",
+                num: "16557"
+            }, {
+                name: "潘阳湖",
+                num: "14578"
+            }, {
+                name: "洞庭湖",
+                num: "13658"
+            }, {
+                name: "黄山",
+                num: "10245"
+            }, {
+                name: "庐山",
+                num: "10024"
+            }],
+            group: [{
+                src: "../../img/group1.png",
+                title: "拉萨梅里雪山",
+                price: "5500"
+            }, {
+                src: "../../img/group2.jpg",
+                title: "西江千户苗寨",
+                price: "6500"
+            }, {
+                src: "../../img/group3.jpg",
+                title: "桂林龙骨梯田",
+                price: "7500"
+            }, {
+                src: "../../img/group4.jpg",
+                title: "武夷山珞珈山双拼",
+                price: "8500"
+            }, {
+                src: "../../img/group5.jpg",
+                title: "张家界凤凰古城",
+                price: "1500"
+            }, {
+                src: "../../img/group1.png",
+                title: "拉萨梅里雪山",
+                price: "5500"
+            }, {
+                src: "../../img/group2.jpg",
+                title: "西江千户苗寨",
+                price: "6500"
+            }, {
+                src: "../../img/group3.jpg",
+                title: "桂林龙骨梯田",
+                price: "7500"
+            }, {
+                src: "../../img/group4.jpg",
+                title: "武夷山珞珈山双拼",
+                price: "8500"
+            }, {
+                src: "../../img/group5.jpg",
+                title: "张家界凤凰古城",
+                price: "1500"
+            }]
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,33 @@
+@font-face {
+    font-family: round;
+    src: url('font.ttf');
+}
+
+body {
+    background-color: #daebff;
+    font-family: round;
+}
+
+.shadow {
+    width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 8px 8px 2px -3px rgba(0, 0, 0, 0.238);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:active {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}

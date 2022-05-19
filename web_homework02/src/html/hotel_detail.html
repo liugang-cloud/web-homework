@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/go.png" type="image/png">
+    <title>hotel_detail</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style>
+        html {
+            font-size: 23px;
+        }
+        
+        @font-face {
+            font-family: round;
+            src: url('../../assest/font/font.ttf');
+        }
+        
+        .header {
+            width: 58rem;
+            height: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1rem;
+        }
+        
+        .banner {
+            width: 58rem;
+            height: 18rem;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        
+        .left {
+            width: 30rem;
+            height: 94%;
+            border-radius: 8px;
+            background-image: url('../../img/hd1.jpg');
+            background-size: 100% 100%;
+        }
+        
+        .right {
+            width: 28rem;
+            height: 96%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .right>div {
+            width: 8rem;
+            height: 8rem;
+            background-color: black;
+            margin-left: 1rem;
+            border-radius: 8px;
+            background-size: 100% 100%;
+        }
+        
+        .title {
+            width: 58rem;
+            height: 5rem;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        
+        .title>span {
+            margin-top: 0.5rem;
+            margin-left: 0.5rem;
+            color: rgb(103, 162, 244);
+            font-size: 1.3rem;
+        }
+        
+        .title>div {
+            width: 18rem;
+            height: 1.5rem;
+            margin-left: 0.5rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .content {
+            width: 58rem;
+            height: 42rem;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0.5rem;
+            background-color: white;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .row1 {
+            width: 58rem;
+            height: 2rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 0.5rem;
+            margin-left: 0.5rem;
+        }
+        
+        .row2 {
+            width: 58rem;
+            height: 2rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 0.5rem;
+            margin-left: 0.5rem;
+        }
+        
+        .main {
+            width: 58rem;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            margin-left: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .main_left {
+            width: 10rem;
+            height: 16.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .main_left>img {
+            width: 9rem;
+            height: 9rem;
+            border-radius: 6px;
+        }
+        
+        .main_left>span {
+            margin-top: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .main_left>div {
+            display: flex;
+            width: 6rem;
+            height: 4rem;
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: 0.8rem;
+            color: rgb(107, 107, 107);
+            margin-top: 0.5rem;
+            justify-content: space-between;
+        }
+        
+        .main_right {
+            width: 48rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .main_right>div {
+            width: 46rem;
+            height: 2rem;
+            border: 1px solid gray;
+            border-radius: 6px;
+            margin-top: 0.5rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            font-size: 0.8rem;
+        }
+        
+        .main_right>div:nth-child(1) {
+            margin-top: 0;
+        }
+        
+        .main_right>div>span:nth-child(4) {
+            color: #F56C6C;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="header">
+            <el-breadcrumb separator-class="el-icon-arrow-right">
+                <el-breadcrumb-item>首页</el-breadcrumb-item>
+                <el-breadcrumb-item>服务预定</el-breadcrumb-item>
+                <el-breadcrumb-item>酒店预定</el-breadcrumb-item>
+                <el-breadcrumb-item>酒店详情</el-breadcrumb-item>
+            </el-breadcrumb>
+        </div>
+        <div class="banner">
+            <div class="left"></div>
+            <div class="right">
+                <div style="background-image: url('../../img/hd2.jpg');"></div>
+                <div style="background-image: url('../../img/hd3.jpg');"></div>
+                <div style="background-image: url('../../img/hd4.jpg');"></div>
+                <div style="background-image: url('../../img/hd5.jpg');"></div>
+                <div style="background-image: url('../../img/hd6.jpg');"></div>
+                <div style="background-image: url('../../img/hd7.jpg');"></div>
+            </div>
+        </div>
+        <div class="title">
+            <span>上海茶弥别墅</span>
+            <div>
+                <el-rate v-model="value" disabled show-score text-color="#ff9900" score-template="{value}">
+                </el-rate>
+                <el-button size="small" icon="el-icon-star-off">收藏</el-button>
+                <el-button size="small" icon="el-icon-share">酒店ID：456789</el-button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="row1">
+                <el-date-picker v-model="value1" type="datetime" placeholder="选择日期时间"></el-date-picker>
+                <el-input style="width: 10rem;margin-left: 1rem;" placeholder="请选择人数" suffix-icon="el-icon-user" v-model="input1"></el-input>
+                <el-button style="margin-left: 1rem;" type="primary" plain round icon="el-icon-search">搜索</el-button>
+            </div>
+            <div class="row2">
+                <el-button round>床型<i class="el-icon-arrow-down"></i></el-button>
+                <el-button round>宽带<i class="el-icon-arrow-down"></i></el-button>
+                <el-button round>支付<i class="el-icon-arrow-down"></i></el-button>
+                <el-button round>立即确认</el-button>
+            </div>
+            <div class="main">
+                <div class="main_left">
+                    <img src="../../img/hd01.png" alt="">
+                    <span>幸运神秘房</span>
+                    <div>
+                        <span><i class="el-icon-circle-check"></i> 20平米</span>
+                        <span><i class="el-icon-circle-check"></i>有窗</span>
+                        <span><i class="el-icon-circle-check"></i>2-3层</span>
+                    </div>
+                </div>
+                <div class="main_right">
+                    <div>
+                        <span>标准价</span>
+                        <span>两人间</span>
+                        <span>大床房</span>
+                        <span>￥150</span>
+                        <span>剩余3间</span>
+                        <el-button size="small" style="margin-left: 1rem;" type="primary" plain round icon="el-icon-sell">在线支付</el-button>
+                    </div>
+                    <div>
+                        <span>标准价</span>
+                        <span>两人间</span>
+                        <span>大床房</span>
+                        <span>￥150</span>
+                        <span>剩余2间</span>
+                        <el-button size="small" style="margin-left: 1rem;" type="primary" plain round icon="el-icon-sell">在线支付</el-button>
+                    </div>
+                    <div>
+                        <span>标准价</span>
+                        <span>两人间</span>
+                        <span>大床房</span>
+                        <span>￥150</span>
+                        <span>剩余1间</span>
+                        <el-button size="small" style="margin-left: 1rem;" type="primary" plain round icon="el-icon-sell">在线支付</el-button>
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="main_left">
+                    <img src="../../img/hd02.png" alt="">
+                    <span>观海大床房</span>
+                    <div>
+                        <span><i class="el-icon-circle-check"></i> 20平米</span>
+                        <span><i class="el-icon-circle-check"></i>有窗</span>
+                        <span><i class="el-icon-circle-check"></i>2-3层</span>
+                    </div>
+                </div>
+                <div class="main_right">
+                    <div>
+                        <span>标准价</span>
+                        <span>两人间</span>
+                        <span>大床房</span>
+                        <span>￥150</span>
+                        <span>剩余3间</span>
+                        <el-button size="small" style="margin-left: 1rem;" type="primary" plain round icon="el-icon-sell">在线支付</el-button>
+                    </div>
+                    <div>
+                        <span>标准价</span>
+                        <span>两人间</span>
+                        <span>大床房</span>
+                        <span>￥150</span>
+                        <span>剩余2间</span>
+                        <el-button size="small" style="margin-left: 1rem;" type="primary" plain round icon="el-icon-sell">在线支付</el-button>
+                    </div>
+                    <div>
+                        <span>标准价</span>
+                        <span>两人间</span>
+                        <span>大床房</span>
+                        <span>￥150</span>
+                        <span>剩余1间</span>
+                        <el-button size="small" style="margin-left: 1rem;" type="primary" plain round icon="el-icon-sell">在线支付</el-button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="../../assest/vue/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 1420 * 23 + "px"
+    var app = new Vue({
+        el: "#app",
+        data: {
+            value: 4.8
+        }
+    })
+</script>
+
+</html>

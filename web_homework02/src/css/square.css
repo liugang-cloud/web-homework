@@ -1,0 +1,133 @@
+.container {
+    transform-style: preserve-3d;
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+    perspective-origin: 400px -100px;
+    perspective: 2000px;
+    margin-top: 0.9rem;
+}
+
+.container:hover {
+    perspective-origin: center center;
+}
+
+.container:hover>.face {
+    opacity: 1;
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(224, 239, 255);
+    position: absolute;
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.face>img {
+    position: absolute;
+    width: 8rem;
+    height: 8rem;
+    transition: all 0.3s;
+}
+
+.front {
+    transform: translateZ(93px);
+    background-color: rgb(224, 239, 255);
+}
+
+.backk {
+    transform: rotateY(180deg) translateZ(93px);
+    background-color: rgb(255, 252, 242);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(93px);
+    background-color: rgb(242, 255, 242);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(93px);
+    background-color: rgb(255, 240, 254);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(93px);
+    background-color: rgb(255, 240, 247);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(93px);
+    background-color: rgb(255, 240, 246);
+}
+
+.up {
+    transform: rotateX(90deg);
+    perspective: 20000px;
+    perspective-origin: center center;
+}
+
+.down {
+    transform: rotateX(-90deg);
+    perspective: 20000px;
+    perspective-origin: center center;
+}
+
+.lef {
+    transform: rotateY(90deg);
+    perspective: 20000px;
+    perspective-origin: center center;
+}
+
+.righ {
+    transform: rotateY(-90deg);
+    perspective: 20000px;
+    perspective-origin: center center;
+}
+
+@keyframes spin {
+    /* Y轴旋转 */
+    0% {
+        transform: rotateX(0);
+    }
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+
+.front>div {
+    position: absolute;
+}
+
+.c1 {
+    width: 8rem;
+    height: 1rem;
+}
+
+.c2 {
+    width: 8rem;
+    height: 1rem;
+    top: 7rem
+}
+
+.c3 {
+    width: 1rem;
+    height: 8rem;
+}
+
+.c4 {
+    width: 1rem;
+    height: 8rem;
+    left: 7rem;
+}
+
+.show {
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+}

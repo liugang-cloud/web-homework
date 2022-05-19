@@ -1,0 +1,117 @@
+html {
+    font-size: 23px;
+    font-family: none;
+}
+
+.partner {
+    width: 62rem;
+    height: 35rem;
+    background-image: url('img/partner.png');
+    background-size: 62rem 35rem;
+    position: relative;
+    margin-top: 1rem;
+}
+
+.partner_navbar {
+    width: 58rem;
+    height: 3rem;
+    line-height: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.partner_navbar>span {
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    font-family: round;
+}
+
+.partner_form {
+    width: 24rem;
+    height: 14rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.partner_form_item {
+    width: 24rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.partner_form_title {
+    width: 5rem;
+    height: 2rem;
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 2rem;
+    background-color: cadetblue;
+    color: white;
+}
+
+.partner_form_content {
+    width: 1rem;
+    height: 2rem;
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 2rem;
+}
+
+.partner_form_content>input {
+    width: 18rem;
+    height: 2rem;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1rem;
+}
+
+.partner_button {
+    width: 6rem;
+    height: 2rem;
+    background-color: rgb(75, 110, 160);
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3.5rem;
+    color: white;
+    position: relative;
+}
+
+#footer {
+    width: 62rem;
+    height: 4rem;
+    background-color: rgb(227, 227, 227);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+#footer>span {
+    color: rgb(154, 154, 154);
+    font-size: 0.8rem;
+}
+
+.partner_mask {
+    width: 62rem;
+    height: 35rem;
+    background-color: rgba(0, 0, 0, 0.127);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
